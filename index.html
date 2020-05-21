@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="shortcut icon" href="IMG/Full.svg" type="image/x-icon" />
   <title>Full Apuestas | El mejor sitio de Apuestas</title>
@@ -56,12 +57,12 @@
       /* color: #2c3e50; */
     }
 
-    a .brand-logo {
+    /* a .brand-logo {
       display: flex;
       flex-direction: row;
       align-items: center;
 
-    }
+    } */
 
     .container {
       width: 100%;
@@ -148,7 +149,7 @@
     }
 
     .macth {
-      width: 90%;
+      width: 100%;
       margin: 0 auto;
       display: flex;
       flex-direction: row;
@@ -162,7 +163,7 @@
       align-items: center;
       justify-content: center;
       /* border-right: 1px solid orange; */
-      padding-right: 5px;
+      padding-right: 25px;
       font-size: .8em;
     }
 
@@ -204,6 +205,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-left: 25px;
     }
 
     .rondas {
@@ -236,10 +238,6 @@
       align-items: center;
     }
 
-    input[type="radio"] {
-      width: 50px;
-    }
-
     .btn__bets {
       padding: 5px;
       color: tomato;
@@ -251,11 +249,86 @@
       letter-spacing: 0;
       cursor: pointer;
     }
-    .space{
+
+    .space {
       margin-top: 10px;
     }
 
-    */
+    .collapsible {
+      margin: 0 auto;
+      border: none;
+      box-shadow: none;
+      border-bottom: 1px solid #e74c3c;
+    }
+
+    .collapsible-header {
+      border: none;
+
+    }
+
+    .collapsible-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 20px;
+      border: none;
+    }
+
+    /* input[type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+      position: relative;
+      opacity: 1;
+      pointer-events: all;
+    }
+    input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+} */
+[type="radio"]:not(:checked)+label, [type="radio"]:checked+label{
+  position:static; 
+  padding: 0 15px;
+}
+label {
+  color: #2c3e50;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1px;
+}
+
+input[type=radio]:checked + label{
+  
+  color: #2c3e50;
+  background:#e74c3c;
+}
+
+label + input[type=radio] + label {
+  border-left: 2px solid #e74c3c;
+}
+.radio-group {
+  border: solid #e74c3c;
+  display: inline-block;
+  /* margin: 20px; */
+  border-radius: 10px;
+  overflow: hidden;
+}
+.btn{
+  margin: 10px;
+  background: none;
+  padding: 0 10px;
+  box-shadow: none;
+  border: 1px solid #e74c3c;
+}
+.btn:hover{
+  color: white ;
+  background-color: #e74c3c;
+}
+.apostar{
+  color: #e74c3c;
+  background-color: none;
+}
   </style>
 </head>
 
@@ -369,1463 +442,214 @@
       </div>
       <ul id="tabs-swipe-demo" class="tabs">
         <li class="tab col s3"><a href="#test-swipe-1">round 1</a></li>
-        <li class="tab col s3"><a class="active" href="#test-swipe-2">round 2</a></li>
+        <li class="tab col s3"><a href="#test-swipe-2">round 2</a></li>
         <li class="tab col s3"><a href="#test-swipe-3">round 3</a></li>
       </ul>
       <div id="test-swipe-1" class="container box__flex">
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
+        <div class="box__container__league">
+          <ul class="collapsible box__macth">
+            <li>
+              <div class="collapsible-header macth">
+                <div class="date__macth">
+                  15:50
                 </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <!-- <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div> -->
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-    
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
+                <div class="team__home">
+                  Barcelona
                 </div>
-                <div class="bet__match">
-                  <button class="btn__bets" type="submit">Apostar</button>
-                  <input type="radio" name="bet__match" id="" value="winHome">
-                  <input type="radio" name="bet__match" id="" value="deude">
-                  <input type="radio" name="bet__match" id="" value="winVisit">
+                <div class="team__home__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div>
+                  vs
+                </div>
+                <div class="team__visit__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div class="team__visit">
+                  Real Madrid
+                </div>
+                <div class="apuesta">
+                  <img src="IMG/check-circle-solid.svg" alt="" width="25px">
                 </div>
               </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
+              <div class="collapsible-body">
+                  aqui va las opciones del partido
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="box__container__league">
+          <ul class="collapsible box__macth">
+            <li>
+              <div class="collapsible-header macth">
+                <div class="date__macth">
+                  15:50
                 </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
+                <div class="team__home">
+                  Barcelona
+                </div>
+                <div class="team__home__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div>
+                  vs
+                </div>
+                <div class="team__visit__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div class="team__visit">
+                  Real Madrid
+                </div>
+                <div class="apuesta">
+                  <img src="IMG/check-circle-solid.svg" alt="" width="25px">
                 </div>
               </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
+              <div class="collapsible-body">
+                  aqui va la informacion del partido
               </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box__container__league">
-              <!-- <div class="box__round">
-                round
-              </div> -->
-              <div class="box__macth">
-                <div class="box__date__complete">
-                  <!-- <p class="date">21/25/2020</p> -->
-                </div>
-                <div class="macth">
-                  <div class="date__macth">
-                    <p class="">15:50</p>
-                    <!-- <p class="date">Hoy</p> -->
-                  </div>
-                  <div class="team__home">
-                    <div class="team__home__name">
-                      Bar
-                    </div>
-                  </div>
-                  <div class="fight">
-                    <div class="teams">
-                      <div class="team__home__escudo">
-                        <img src="IMG/ubuntu.png" alt="" width="25px">
-                      </div>
-                      vs
-                      <div class="team__visit__escudo">
-                        <img src="IMG/shield.png" alt="" width="25px">
-                      </div>
-                    </div>
-                    <div class="box__date__complete">
-                      <p class="date">21/25/2020</p>
-                    </div>
-                  </div>
-                  <div class="team__visit">
-                    <div class="team__visit__name">
-                      Rmd
-                    </div>
-                  </div>
-                  <div class="apuesta">
-                    <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div id="test-swipe-2" class="container box__flex">
         <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
+          <ul class="collapsible box__macth">
+            <li>
+              <div class="collapsible-header macth">
+                <div class="date__macth">
+                  15:50
                 </div>
-              </div>
-              <div class="fight">
-                <!-- <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div> -->
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
+                <div class="team__home">
+                  Barcelona
+                </div>
+                <div class="team__home__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div>
                   vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
                 </div>
-
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
+                <div class="team__visit__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div class="team__visit">
+                  Real Madrid
+                </div>
+                <div class="apuesta">
+                  <img src="IMG/check-circle-solid.svg" alt="" width="25px">
                 </div>
               </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
+              <div class="collapsible-body">
+                  aqui va las opciones del partido
               </div>
-            </div>
-            <div class="bet__match">
-              <button class="btn__bets" type="submit">Apostar</button>
-              <input type="radio" name="bet__match" id="" value="winHome">
-              <input type="radio" name="bet__match" id="" value="deude">
-              <input type="radio" name="bet__match" id="" value="winVisit">
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
+          <ul class="collapsible box__macth">
+            <li>
+              <div class="collapsible-header macth">
+                <div class="date__macth">
+                  15:50
                 </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
+                <div class="team__home">
+                  Barcelona
+                </div>
+                <div class="team__home__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div>
                   vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
                 </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
+                <div class="team__visit__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
                 </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
+                <div class="team__visit">
+                  Real Madrid
+                </div>
+                <div class="apuesta">
+                  <img src="IMG/check-circle-solid.svg" alt="" width="25px">
                 </div>
               </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
+              <div class="collapsible-body">
+                  aqui va la informacion del partido
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
       <div id="test-swipe-3" class="container box__flex">
         <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
+          <ul class="collapsible box__macth">
+            <li>
+              <div class="collapsible-header macth">
+                <div class="date__macth">
+                  15:50
                 </div>
-              </div>
-              <div class="fight">
-                <!-- <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div> -->
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
+                <div class="team__home">
+                  Barcelona
+                </div>
+                <div class="team__home__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div>
                   vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
                 </div>
-
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
+                <div class="team__visit__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div class="team__visit">
+                  Real Madrid
+                </div>
+                <div class="apuesta">
+                  <img src="IMG/check-circle-solid.svg" alt="" width="25px">
                 </div>
               </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
+              <div class="collapsible-body">
+                  aqui va las opciones del partido
               </div>
-            </div>
-            <div class="bet__match">
-              <button class="btn__bets" type="submit">Apostar</button>
-              <input type="radio" name="bet__match" id="" value="winHome">
-              <input type="radio" name="bet__match" id="" value="deude">
-              <input type="radio" name="bet__match" id="" value="winVisit">
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
+          <ul class="collapsible box__macth">
+            <li>
+              <div class="collapsible-header macth">
+                <div class="date__macth">
+                  15:50
                 </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
+                <div class="team__home">
+                  Barcelona
+                </div>
+                <div class="team__home__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
+                </div>
+                <div>
                   vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
                 </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
+                <div class="team__visit__escudo">
+                  <img src="IMG/ubuntu.png" alt="" width="25px">
                 </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
+                <div class="team__visit">
+                  Real Madrid
+                </div>
+                <div class="apuesta">
+                  <img src="IMG/check-circle-solid.svg" alt="" width="25px">
                 </div>
               </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
+              <div class="collapsible-body">
+                  aqui va la informacion del partido
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box__container__league">
-          <!-- <div class="box__round">
-            round
-          </div> -->
-          <div class="box__macth">
-            <div class="box__date__complete">
-              <!-- <p class="date">21/25/2020</p> -->
-            </div>
-            <div class="macth">
-              <div class="date__macth">
-                <p class="">15:50</p>
-                <!-- <p class="date">Hoy</p> -->
-              </div>
-              <div class="team__home">
-                <div class="team__home__name">
-                  Bar
-                </div>
-              </div>
-              <div class="fight">
-                <div class="teams">
-                  <div class="team__home__escudo">
-                    <img src="IMG/ubuntu.png" alt="" width="25px">
-                  </div>
-                  vs
-                  <div class="team__visit__escudo">
-                    <img src="IMG/shield.png" alt="" width="25px">
-                  </div>
-                </div>
-                <div class="box__date__complete">
-                  <p class="date">21/25/2020</p>
-                </div>
-              </div>
-              <div class="team__visit">
-                <div class="team__visit__name">
-                  Rmd
-                </div>
-              </div>
-              <div class="apuesta">
-                <img src="IMG/check-circle-solid.svg" alt="" width="25px">
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
 
-      </div>
-      <div class="rondas">
-        <button type="submit">
-          Confirmar Apuestas
-        </button>
-      </div>
+    </div>
+    <div class="rondas">
+      <button type="submit">
+        Confirmar Apuestas
+      </button>
+    </div>
     </div>
 
 
@@ -1841,6 +665,12 @@
       $(".button-collapse").sideNav();
     });
   </script>
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, options);
+    });
+  </script> -->
 </body>
 
 </html>
